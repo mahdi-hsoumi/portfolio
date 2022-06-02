@@ -1,0 +1,31 @@
+{
+  "name": "portfolio",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "cannon": "^0.6.2",
+    "chroma-js": "^2.4.2",
+    "nice-color-palettes": "^3.0.0",
+    "pinia": "^2.0.14",
+    "sass": "^1.52.1",
+    "three": "0.134",
+    "troisjs": "^0.3.4",
+    "tweakpane": "^3.0.8",
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "prettier": "^2.5.1",
+    "vite": "^2.9.9"
+  }
+}
