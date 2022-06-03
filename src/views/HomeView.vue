@@ -314,10 +314,10 @@ export default {
       span {
         position: absolute;
         display: block;
-        border: 5px solid #de3578;
+        border: 5px solid #990000;
         border-radius: 50%;
         animation: animate 6s ease-in-out infinite;
-        box-shadow: 0 5px 0 #ffff80, inset 0 5px 0 #ff4040, 5px 0 5px 0 #0d25bb;
+        box-shadow: 0 5px 0 #ff5b00, inset 0 5px 0 #d4d925;
         animation-delay: calc(-1s * var(--i));
 
         @keyframes animate {
