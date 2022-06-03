@@ -44,7 +44,7 @@ export default {
     }
     return {
       WIDTH: 30,
-      HEIGHT: 15,
+      HEIGHT: 20,
       NUM_INSTANCES,
       instances,
       target,
@@ -152,7 +152,6 @@ export default {
   <div class="home-container">
     <div class="main">
       <div class="logo">
-        <div class="outline"></div>
         <div class="logo-3d">
           <span style="--i: 1"></span>
           <span style="--i: 2"></span>
@@ -259,40 +258,7 @@ export default {
     z-index: 1;
     position: absolute;
     left: 40px;
-    top: 40px;
-    .outline {
-      // background: linear-gradient(
-      //   90deg,
-      //   #0060ff 0%,
-      //   #ff6000 75%,
-      //   transparent 100%
-      // );
-      // height: 120px;
-      // width: 120px;
-      // border-radius: 50%;
-      // position: relative;
-      // animation: rotation 2s infinite linear;
-      // &::after {
-      //   content: " ";
-      //   position: absolute;
-      //   z-index: 2;
-      //   top: 5px;
-      //   left: 5px;
-      //   background: black;
-      //   border-radius: 50%;
-      //   display: block;
-      //   height: 110px;
-      //   width: 110px;
-      // }
-      // @keyframes rotation {
-      //   0% {
-      //     transform: rotate(0);
-      //   }
-      //   100% {
-      //     transform: rotate(360deg);
-      //   }
-      // }
-    }
+    top: 60px;
     .logo-3d {
       position: absolute;
       top: 0;
@@ -371,6 +337,7 @@ export default {
     right: 0;
 
     top: 20px;
+    font-weight: 700;
     display: flex;
     text-align: right;
     @media screen and (max-width: 600px) {
@@ -383,7 +350,9 @@ export default {
       transition: all 0.5s;
       &:hover {
         letter-spacing: 10px;
-        font-size: 32px;
+      }
+      @media screen and (max-width: 600px) {
+        margin: 10px;
       }
     }
   }
@@ -391,8 +360,8 @@ export default {
     color: #000;
     font-size: 24px;
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 20px;
+    bottom: 20px;
     display: flex;
     img {
       z-index: 1;
