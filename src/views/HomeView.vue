@@ -1,5 +1,5 @@
 <script>
-import { Object3D, MathUtils, Plane, Raycaster, Vector3 } from "three";
+import { Object3D, MathUtils, Plane, Raycaster, Vector3, Vector2 } from "three";
 const { randFloat: rnd, randFloatSpread: rndFS } = MathUtils;
 
 import {
@@ -44,7 +44,7 @@ export default {
     }
     return {
       WIDTH: 30,
-      HEIGHT: 30,
+      HEIGHT: 15,
       NUM_INSTANCES,
       instances,
       target,
@@ -56,11 +56,12 @@ export default {
     return {
       color: "#fff",
       metalness: 1,
-      roughness: 0.1,
-      light1Color: "#fff",
-      light2Color: "#fff",
-      light3Color: "#fff",
-      light4Color: "#fff",
+      roughness: 0.7,
+      light1Color: "#990000",
+      light2Color: "#FF5B00",
+      light3Color: "#D4D925",
+      light4Color: "#FFEE63",
+      mousePosition: null,
     };
   },
   mounted() {
@@ -77,18 +78,36 @@ export default {
     this.light = this.$refs.light.light;
 
     this.init();
-  },
-
-  methods: {
-    onPointerMove() {
+    window.addEventListener("pointermove", (e) => {
       this.raycaster.setFromCamera(
-        this.pointer.positionN,
+        new Vector2(
+          (e.clientX / window.innerWidth) * 2 - 1,
+          -(e.clientY / window.innerHeight) * 2 + 1
+        ),
         this.$refs.renderer.three.camera
+      );
+      this.mousePosition = new Vector3(
+        e.clientX / window.innerWidth,
+        -(e.clientY / window.innerHeight),
+        0
       );
       this.raycaster.ray.intersectPlane(this.pointerPlane, this.pointerV3);
       const x = (2 * this.pointerV3.x) / this.WIDTH;
       const y = (2 * this.pointerV3.y) / this.HEIGHT;
-      this.liquidEffect.addDrop(x, y, 0.025, 0.005);
+      this.liquidEffect.addDrop(x, y, 0.05, 0.005);
+    });
+  },
+
+  methods: {
+    onPointerMove() {
+      // this.raycaster.setFromCamera(
+      //   this.pointer.positionN,
+      //   this.$refs.renderer.three.camera
+      // );
+      // this.raycaster.ray.intersectPlane(this.pointerPlane, this.pointerV3);
+      // const x = (2 * this.pointerV3.x) / this.WIDTH;
+      // const y = (2 * this.pointerV3.y) / this.HEIGHT;
+      // this.liquidEffect.addDrop(x, y, 0.025, 0.005);
     },
     init() {
       // init instanced mesh matrix
@@ -166,27 +185,14 @@ export default {
     >
       <Camera :position="{ x: 0, y: 0, z: 15 }" />
       <Scene ref="scene">
-        <AmbientLight color="#808080" />
+        <AmbientLight />
+        <PointLight :color="light1Color" :position="{ x: 50, y: 50, z: 50 }" />
+        <PointLight :color="light2Color" :position="{ x: -50, y: 50, z: 50 }" />
         <PointLight
-          color="#ff6000"
-          :position="{ x: 50, y: 50, z: 50 }"
-          :intensity="0.5"
-        />
-        <PointLight
-          color="#0060ff"
-          :position="{ x: -50, y: 50, z: 50 }"
-          :intensity="0.5"
-        />
-        <PointLight
-          color="#ff6000"
+          :color="light3Color"
           :position="{ x: -50, y: -50, z: 50 }"
-          :intensity="0.5"
         />
-        <PointLight
-          color="#0000ff"
-          :position="{ x: 50, y: -50, z: 50 }"
-          :intensity="0.5"
-        />
+        <PointLight :color="light4Color" :position="{ x: 50, y: -50, z: 50 }" />
         <PointLight ref="light" color="#0060ff" :intensity="0.5" />
 
         <InstancedMesh ref="imesh" :count="NUM_INSTANCES">
@@ -255,37 +261,37 @@ export default {
     left: 40px;
     top: 40px;
     .outline {
-      background: linear-gradient(
-        90deg,
-        #0060ff 0%,
-        #ff6000 75%,
-        transparent 100%
-      );
-      height: 120px;
-      width: 120px;
-      border-radius: 50%;
-      position: relative;
-      animation: rotation 2s infinite linear;
-      &::after {
-        content: " ";
-        position: absolute;
-        z-index: 2;
-        top: 5px;
-        left: 5px;
-        background: black;
-        border-radius: 50%;
-        display: block;
-        height: 110px;
-        width: 110px;
-      }
-      @keyframes rotation {
-        0% {
-          transform: rotate(0);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
+      // background: linear-gradient(
+      //   90deg,
+      //   #0060ff 0%,
+      //   #ff6000 75%,
+      //   transparent 100%
+      // );
+      // height: 120px;
+      // width: 120px;
+      // border-radius: 50%;
+      // position: relative;
+      // animation: rotation 2s infinite linear;
+      // &::after {
+      //   content: " ";
+      //   position: absolute;
+      //   z-index: 2;
+      //   top: 5px;
+      //   left: 5px;
+      //   background: black;
+      //   border-radius: 50%;
+      //   display: block;
+      //   height: 110px;
+      //   width: 110px;
+      // }
+      // @keyframes rotation {
+      //   0% {
+      //     transform: rotate(0);
+      //   }
+      //   100% {
+      //     transform: rotate(360deg);
+      //   }
+      // }
     }
     .logo-3d {
       position: absolute;
@@ -308,10 +314,10 @@ export default {
       span {
         position: absolute;
         display: block;
-        border: 5px solid #0060ff;
+        border: 5px solid #de3578;
         border-radius: 50%;
         animation: animate 6s ease-in-out infinite;
-        box-shadow: 0 5px 0 #ff6000, inset 0 5px 0 #0000ff;
+        box-shadow: 0 5px 0 #ffff80, inset 0 5px 0 #ff4040, 5px 0 5px 0 #0d25bb;
         animation-delay: calc(-1s * var(--i));
 
         @keyframes animate {
@@ -346,7 +352,7 @@ export default {
   }
 
   .my-name {
-    color: #fff;
+    color: #000;
     z-index: 1;
     font-size: 64px;
     font-weight: 900;
@@ -359,7 +365,7 @@ export default {
     }
   }
   .nav-bar {
-    color: #fff;
+    color: #000;
     font-size: 24px;
     position: absolute;
     right: 0;
@@ -382,7 +388,7 @@ export default {
     }
   }
   .social-media {
-    color: #fff;
+    color: #000;
     font-size: 24px;
     position: absolute;
     left: 0;
