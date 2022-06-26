@@ -2,12 +2,12 @@
   <div class="w-screen h-screen absolute left-0 top-0 select-none">
     <img
       class="rotate-180 w-[60%] sm:w-[40%] lg:w-[30%] absolute left-5 top-5 md:left-10 md:top-10 animate__animated animate__slideInLeft"
-      src="../assets/images/box art.png"
+      src="../assets/images/box-art.png"
       alt=""
     />
     <img
       class="w-[60%] sm:w-[40%] lg:w-[30%] absolute right-5 bottom-5 md:right-10 md:bottom-10 animate__animated animate__slideInRight"
-      src="../assets/images/box art.png"
+      src="../assets/images/box-art.png"
       alt=""
     />
   </div>

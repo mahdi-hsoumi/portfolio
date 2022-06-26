@@ -34,7 +34,27 @@ export default {
         "ethers",
         "hardhat",
       ],
-      projects: [],
+      projects: [
+        {
+          img: new URL("/meta.jpg", import.meta.url).href,
+          url: "https://game.bixos.io/",
+          title: "Bixosverse",
+          description:
+            "I made a multiplayer online game using three.js. players can connect with theire wallets I made a multiplayer online game using three.js. players can connect with theire walletsI made a multiplayer online game using three.js. players can connect with theire wallets",
+          technologies: [
+            "vue.js",
+            "nuxt",
+            "tailwind",
+            "css",
+            "socket.io",
+            "three.js",
+            "node.js",
+            "express",
+            "ethers",
+            "blender",
+          ],
+        },
+      ],
     },
     {
       text: "FR",

@@ -13,7 +13,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <div class="text-primary overflow-hidden relative">
+  <div class="w-screen h-screen overflow-hidden text-primary relative">
     <Header class="z-20 animate__animated animate__slideInRight" />
     <Home
       v-if="route.hash === ''"

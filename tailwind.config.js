@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         primary: "#193042",
         secondary: "#5ab6cc",
+        pinky: "#F7ACCF",
       },
     },
   },
