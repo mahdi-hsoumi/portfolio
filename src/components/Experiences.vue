@@ -124,7 +124,7 @@
               </a>
               <p class="mb-5">{{ project.description }}</p>
 
-              <div>
+              <div class="flex flex-wrap">
                 <span
                   v-for="technology in project.technologies"
                   :key="technology"
