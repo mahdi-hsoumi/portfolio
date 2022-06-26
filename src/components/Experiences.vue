@@ -33,7 +33,7 @@
 
     <div
       v-if="experienceDetailsModel && experienceData"
-      class="z-30 absolute h-screen w-screen text-white rounded-md bg-[#1930424f] backdrop-blur-md overflow-x-hidden overflow-y-auto"
+      class="z-30 absolute h-screen w-screen text-white bg-[#1930424f] backdrop-blur-md overflow-x-hidden overflow-y-auto"
     >
       <div class="w-[100%] min-h-[100%] relative p-5 md:p-10">
         <!-- Header -->
@@ -112,7 +112,7 @@
           v-else
           class="flex flex-col items-center w-[100%] animate__animated animate__slideInRight"
         >
-          <div class="max-w-[800px] mt-5">
+          <div class="max-w-[800px] w-[100%] mt-5">
             <div v-for="project in experienceData.projects" :key="project">
               <img :src="project.img" class="w-full rounded-md my-5" alt="" />
               <a
