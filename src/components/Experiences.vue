@@ -1,12 +1,8 @@
 <template>
-  <div class="w-screen h-screen flex flex-col justify-center items-center">
+  <div class="flex flex-col justify-center items-center">
     <div class="absolute flex font-semibold">
       loading
-      <div
-        class="ml-2 animate__animated animate__infinite infinite animate__jello tracking-widest"
-      >
-        ...
-      </div>
+      <div class="ml-2">...</div>
     </div>
     <div ref="webgl"></div>
     <div

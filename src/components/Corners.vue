@@ -1,7 +1,7 @@
 <template>
-  <div class="w-screen h-screen absolute left-0 top-0 select-none">
+  <div class="w-full h-full absolute left-0 top-0 select-none">
     <svg
-      class="w-[60%] sm:w-[40%] lg:w-[30%] absolute left-5 top-5 md:left-10 md:top-10 animate__animated animate__slideInLeft"
+      class="w-[60%] sm:w-[40%] lg:w-[30%] absolute left-5 top-5 md:left-10 md:top-10"
       viewBox="0 0 1910 644"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -207,7 +207,7 @@
     </svg>
 
     <img
-      class="w-[60%] sm:w-[40%] lg:w-[30%] absolute right-5 bottom-5 md:right-10 md:bottom-10 animate__animated animate__slideInRight"
+      class="w-[60%] sm:w-[40%] lg:w-[30%] absolute right-5 bottom-5 md:right-10 md:bottom-10"
       src="../assets/images/box-art.png"
       alt=""
     />

@@ -1,7 +1,5 @@
 <template>
-  <div class="w-screen h-screen flex flex-col justify-center items-center">
-    Skills
-  </div>
+  <div class="flex flex-col justify-center items-center">Skills</div>
 </template>
 
 <style lang="scss"></style>

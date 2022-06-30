@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="experienceDetailsModel && experienceData"
-    class="z-30 absolute h-screen w-screen text-white bg-[#1930426f] backdrop-blur-xl overflow-x-hidden overflow-y-auto"
+    class="z-30 absolute text-white bg-[#1930426f] backdrop-blur-xl overflow-x-hidden overflow-y-auto"
   >
     <div class="w-[100%] min-h-[100%] relative p-5 md:p-10">
       <!-- Header -->
@@ -36,7 +36,7 @@
       <!-- Page 1 -->
       <div
         v-if="experienceDetailsModelPage === 1"
-        class="flex flex-col items-center w-[100%] mt-5 animate__animated animate__slideInLeft"
+        class="flex flex-col items-center w-[100%] mt-5"
       >
         <div class="max-w-[800px] mt-10">
           <div>
@@ -72,18 +72,13 @@
         @click="changePage(2)"
         class="fixed top-[50%] right-0 cursor-pointer"
       >
-        <p
-          class="flex items-center relative animate__wobble animate__animated animate__infinite infinite"
-        >
+        <p class="flex items-center relative">
           <span class="pr-8 invisible md:visible"> Projects </span>
           <span class="text-7xl absolute right-0">></span>
         </p>
       </div>
       <!-- Page 2 -->
-      <div
-        v-else
-        class="flex flex-col items-center w-[100%] animate__animated animate__slideInRight"
-      >
+      <div v-else class="flex flex-col items-center w-[100%]">
         <div class="max-w-[800px] w-[100%] mt-5">
           <div v-for="project in experienceData.projects" :key="project">
             <img :src="project.img" class="w-full rounded-md my-5" alt="" />
@@ -113,9 +108,7 @@
         @click="changePage(1)"
         class="fixed top-[50%] left-0 cursor-pointer"
       >
-        <p
-          class="flex items-center relative animate__wobble animate__animated animate__infinite infinite"
-        >
+        <p class="flex items-center relative">
           <span class="text-7xl absolute left-0"> {{ "<" }} </span>
           <span class="pl-8 invisible md:visible"> Details </span>
         </p>

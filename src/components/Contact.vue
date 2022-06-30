@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen flex flex-col justify-center items-center">
+  <div class="  flex flex-col justify-center items-center">
     Contact
   </div>
 </template>
