@@ -2,7 +2,6 @@
   <header
     class="text-xs md:text-lg absolute md:right-10 right-5 md:top-10 top-5 font-semibold"
   >
-    <div class="logo"></div>
     <nav>
       <a
         :class="route.hash === '' ? 'text-secondary' : ''"

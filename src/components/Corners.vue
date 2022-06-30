@@ -1,10 +1,211 @@
 <template>
   <div class="w-screen h-screen absolute left-0 top-0 select-none">
-    <img
-      class="rotate-180 w-[60%] sm:w-[40%] lg:w-[30%] absolute left-5 top-5 md:left-10 md:top-10 animate__animated animate__slideInLeft"
-      src="../assets/images/box-art.png"
-      alt=""
-    />
+    <svg
+      class="w-[60%] sm:w-[40%] lg:w-[30%] absolute left-5 top-5 md:left-10 md:top-10 animate__animated animate__slideInLeft"
+      viewBox="0 0 1910 644"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="1757.5"
+        y="297.5"
+        width="297"
+        height="147"
+        transform="rotate(-180 1757.5 297.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      ></rect>
+      <rect
+        x="1313.5"
+        y="297.5"
+        width="297"
+        height="147"
+        transform="rotate(-180 1313.5 297.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+      />
+      <rect
+        x="542.5"
+        y="333.5"
+        width="297"
+        height="147"
+        transform="rotate(-180 542.5 333.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+      />
+      <rect
+        x="1904.5"
+        y="150.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 1904.5 150.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="1459.5"
+        y="109.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 1459.5 109.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="858.5"
+        y="480.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 858.5 480.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="542.5"
+        y="520.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 542.5 520.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="297.5"
+        y="568.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 297.5 568.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="223.5"
+        y="640.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 223.5 640.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="150.5"
+        y="496.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 150.5 496.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="148.5"
+        y="258.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 148.5 258.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="298.5"
+        y="370.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 298.5 370.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="424.5"
+        y="110.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 424.5 110.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="349.5"
+        y="73.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 349.5 73.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="925.5"
+        y="408.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 925.5 408.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="926.5"
+        y="184.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 926.5 184.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="1073.5"
+        y="256.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 1073.5 256.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="779.5"
+        y="256.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 779.5 256.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="1757.5"
+        y="258.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 1757.5 258.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      <rect
+        x="1460.5"
+        y="369.5"
+        width="147"
+        height="72"
+        transform="rotate(-180 1460.5 369.5)"
+        stroke="#5AB6CC"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+    </svg>
+
     <img
       class="w-[60%] sm:w-[40%] lg:w-[30%] absolute right-5 bottom-5 md:right-10 md:bottom-10 animate__animated animate__slideInRight"
       src="../assets/images/box-art.png"
@@ -13,66 +214,4 @@
   </div>
 </template>
 
-<script setup>
-// import { ref, onMounted } from "vue";
-
-// import * as THREE from "three";
-
-// const webgl = ref(null);
-// onMounted(() => {
-//   let camera, scene, renderer;
-
-//   init();
-//   animate();
-
-//   function init() {
-//     camera = new THREE.PerspectiveCamera(
-//       45,
-//       window.innerWidth / window.innerHeight,
-//       1,
-//       1000
-//     );
-//     camera.position.z = 5;
-
-//     scene = new THREE.Scene();
-
-//     const geometry = new THREE.BoxGeometry(1, 1, 1);
-//     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-//     material.wireframe = true;
-//     const cube = new THREE.Mesh(geometry, material);
-//     scene.add(cube);
-
-//     renderer = new THREE.WebGLRenderer({ canvas: webgl.value, alpha: true });
-//     renderer.setPixelRatio(window.devicePixelRatio);
-//     renderer.setSize(window.innerWidth, window.innerHeight);
-//     renderer.outputEncoding = THREE.sRGBEncoding;
-
-//     window.addEventListener("resize", onWindowResize);
-//   }
-
-//   function onWindowResize() {
-//     camera.aspect = window.innerWidth / window.innerHeight;
-//     camera.updateProjectionMatrix();
-
-//     renderer.setSize(window.innerWidth, window.innerHeight);
-//   }
-
-//   //
-
-//   function animate() {
-//     requestAnimationFrame(animate);
-
-//     render();
-//   }
-
-//   function render() {
-//     // const time = Date.now() * 0.001;
-
-//     // parent_node.rotation.z = time * 0.5;
-
-//     renderer.render(scene, camera);
-//   }
-// });
-</script>
-
-<style></style>
+<script setup></script>

@@ -14,6 +14,9 @@ const route = useRoute();
 
 <template>
   <div class="w-screen h-screen overflow-hidden text-primary relative">
+    <!-- <div class="w-20 absolute md:left-8 left-2 md:top-5 top-2">
+      <img src="/logo.png" alt="" />
+    </div> -->
     <Header class="z-20 animate__animated animate__slideInRight" />
     <Home
       v-if="route.hash === ''"

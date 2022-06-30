@@ -31,125 +31,22 @@
       <br />
     </div>
 
-    <div
-      v-if="experienceDetailsModel && experienceData"
-      class="z-30 absolute h-screen w-screen text-white bg-[#1930424f] backdrop-blur-md overflow-x-hidden overflow-y-auto"
-    >
-      <div class="w-[100%] min-h-[100%] relative p-5 md:p-10">
-        <!-- Header -->
-        <div class="text-primary absolute right-5 top-5">
-          <span
-            @click="
-              experienceDetailsModel = false;
-              experienceData = null;
-            "
-            class="font-bold leading-none cursor-pointer"
-            >X</span
-          >
-        </div>
-        <div class="md:flex md:justify-between justify-center font-semibold">
-          <div class="md:mr-10 m-2">
-            <p>
-              {{ experienceData ? experienceData.title : "" }}
-            </p>
-            <div class="flex items-center">
-              {{ experienceData ? experienceData.city : "" }}
-              <a target="_blank" :href="experienceData.link">
-                <img :src="experienceData.logo" class="ml-2 w-5" />
-              </a>
-            </div>
-          </div>
-          <div class="md:text-right m-2">
-            <p class="tracking-widest">
-              {{ experienceData ? experienceData.date : "" }}
-            </p>
-            <p>
-              {{ experienceData ? experienceData.country : "" }}
-            </p>
-          </div>
-        </div>
-        <!-- Page 1 -->
-        <div
-          v-if="experienceDetailsModelPage === 1"
-          class="flex flex-col items-center w-[100%] mt-5 animate__animated animate__slideInLeft"
-        >
-          <div class="flex flex-wrap max-w-[800px]">
-            <span
-              v-for="technology in experienceData.technologies"
-              :key="technology"
-              class="m-2 p-2 rounded-md bg-[#5ab6cc]"
-            >
-              {{ technology }}
-            </span>
-          </div>
-
-          <div class="max-w-[800px] mt-10">
-            <div>
-              <p
-                v-for="achievement in experienceData.achievements"
-                :key="achievement"
-                class="m-2"
-              >
-                - {{ achievement }}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          v-if="experienceDetailsModelPage === 1"
-          @click="experienceDetailsModelPage = 2"
-          class="fixed top-[50%] right-0 cursor-pointer"
-        >
-          <p
-            class="flex items-center relative animate__wobble animate__animated animate__infinite infinite"
-          >
-            <span class="pr-8 invisible md:visible"> Projects </span>
-            <span class="text-7xl absolute right-0">></span>
-          </p>
-        </div>
-        <!-- Page 2 -->
-        <div
-          v-else
-          class="flex flex-col items-center w-[100%] animate__animated animate__slideInRight"
-        >
-          <div class="max-w-[800px] w-[100%] mt-5">
-            <div v-for="project in experienceData.projects" :key="project">
-              <img :src="project.img" class="w-full rounded-md my-5" alt="" />
-              <a
-                :href="project.url"
-                target="_blank"
-                class="text-center underline underline-offset-1 text-2xl font-semibold mb-5"
-              >
-                {{ project.title }}
-              </a>
-              <p class="mb-5">{{ project.description }}</p>
-
-              <div class="flex flex-wrap">
-                <span
-                  v-for="technology in project.technologies"
-                  :key="technology"
-                  class="m-2 p-2 rounded-md bg-[#5ab6cc]"
-                >
-                  {{ technology }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          v-if="experienceDetailsModelPage === 2"
-          @click="experienceDetailsModelPage = 1"
-          class="fixed top-[50%] left-0 cursor-pointer"
-        >
-          <p
-            class="flex items-center relative animate__wobble animate__animated animate__infinite infinite"
-          >
-            <span class="text-7xl absolute left-0"> {{ "<" }} </span>
-            <span class="pl-8 invisible md:visible"> Details </span>
-          </p>
-        </div>
-      </div>
-    </div>
+    <Model
+      :experienceDetailsModel="experienceDetailsModel"
+      :experienceData="experienceData"
+      :experienceDetailsModelPage="experienceDetailsModelPage"
+      @closeModel="
+        () => {
+          experienceDetailsModel = false;
+          experienceData = null;
+        }
+      "
+      @changePage="
+        (page) => {
+          experienceDetailsModelPage = page;
+        }
+      "
+    />
   </div>
 </template>
 
@@ -158,6 +55,7 @@ import { ref, onMounted } from "vue";
 
 import { Color } from "three";
 import Globe from "globe.gl";
+import Model from "./model/Model.vue";
 
 import countries from "../assets/countries.json";
 import airportHistory from "../assets/airportHistory";
@@ -219,7 +117,6 @@ onMounted(() => {
       // getScreenCoords
       if (label) {
         const { x, y } = myGlobe.getScreenCoords(label.lat, label.lng);
-        console.log("x,y :>> ", x, y);
         if (window.innerWidth - x < 100) {
           experienceModel.value.style.left = `auto`;
           experienceModel.value.style.right = `${30}px`;
